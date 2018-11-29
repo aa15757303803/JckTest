@@ -26,4 +26,10 @@ public class UserServiceImplTest {
         List<User> list = userService.getUsers();
         logger.info("list={}",list);
     }
+
+    @Test
+    public void getUser() {
+        User user = userService.getUserById();
+        logger.info("user={}",user);
+    }
 }
