@@ -24,6 +24,11 @@ public class UserServiceImpl implements UserService {
      * 3：不是所有的方法都需要事务，如只有一条修改操作，只读操作不需要事务控制
      */
     public List<User> getUsers() {
-        return userDao.getUsers();
+        /**
+         * 先从redis中获取，如果没有再从mysql中获取
+         */
+        
+        List<User> users = userDao.getUsers();
+        return users;
     }
 }
