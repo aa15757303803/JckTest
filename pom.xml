@@ -125,6 +125,12 @@
           <artifactId>spring-test</artifactId>
           <version>4.3.12.RELEASE</version>
       </dependency>
+      <!-- redis客户端：Jedis -->
+      <dependency>
+          <groupId>redis.clients</groupId>
+          <artifactId>jedis</artifactId>
+          <version>2.9.0</version>
+      </dependency>
   </dependencies>
   <build>
     <finalName>jcktestssm</finalName>
