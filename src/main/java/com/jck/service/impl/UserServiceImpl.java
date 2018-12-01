@@ -33,6 +33,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
+    public void tran(User user) {
+        userDao.insert(user);
+        int i = 1/0;
+        User uOne = new User();
+        uOne.setId(1);
+        uOne.setPassword("123");
+        uOne.setUserName("hahaha");
+        userDao.updateByPrimaryKeySelective(uOne);
+    }
+
+    @Override
     public User getUserById() {
         User user = redisDao.getUser(1);
         if (null == user) {

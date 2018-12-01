@@ -32,4 +32,13 @@ public class UserServiceImplTest {
         User user = userService.getUserById();
         logger.info("user={}",user);
     }
+
+    @Test
+    public void tran() {
+        User user = new User();
+        user.setId(2);
+        user.setUserName("yesItIs");
+        user.setPassword("123");
+        userService.tran(user);
+    }
 }

@@ -11,4 +11,8 @@ public interface UserDao {
      * 根据id查询用户
      */
     List<User> getUsers();
+
+    int insert(User user);
+
+    int updateByPrimaryKeySelective(User user);
 }

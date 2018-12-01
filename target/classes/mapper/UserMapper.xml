@@ -84,9 +84,9 @@
   </delete>
 
     <insert id="insert" parameterType="com.jck.entity.User">
-    insert into user (id, username, password
+    insert into user (id, userName, password
       )
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}
+    values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}
       )
   </insert>
     <insert id="insertSelective" parameterType="com.jck.entity.User">
@@ -95,8 +95,8 @@
             <if test="id != null">
                 id,
             </if>
-            <if test="username != null">
-                username,
+            <if test="userName != null">
+                userName,
             </if>
             <if test="password != null">
                 password,
@@ -106,8 +106,8 @@
             <if test="id != null">
                 #{id,jdbcType=INTEGER},
             </if>
-            <if test="username != null">
-                #{username,jdbcType=VARCHAR},
+            <if test="userName != null">
+                #{userName,jdbcType=VARCHAR},
             </if>
             <if test="password != null">
                 #{password,jdbcType=VARCHAR},
@@ -144,8 +144,8 @@
     <update id="updateByPrimaryKeySelective" parameterType="com.jck.entity.User">
         update user
         <set>
-            <if test="username != null">
-                username = #{username,jdbcType=VARCHAR},
+            <if test="userName != null">
+                userName = #{userName,jdbcType=VARCHAR},
             </if>
             <if test="password != null">
                 password = #{password,jdbcType=VARCHAR},
@@ -155,7 +155,7 @@
     </update>
     <update id="updateByPrimaryKey" parameterType="com.jck.entity.User">
     update user
-    set username = #{username,jdbcType=VARCHAR},
+    set userName = #{userName,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
